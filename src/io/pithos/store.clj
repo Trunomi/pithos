@@ -17,7 +17,7 @@
 (defn cassandra-store
   "Connect to a cassandra cluster, and use a specific keyspace.
    When the keyspace is not found, try creating it"
-  [{:keys [cluster keyspace hints repfactor]}]
+  [{:keys [cluster keyspace hints repfactor username password]}]
   (debug "building cassandra store for: " cluster keyspace hints)
   (let [hints   (or hints
                     {:replication {:class             "SimpleStrategy"
